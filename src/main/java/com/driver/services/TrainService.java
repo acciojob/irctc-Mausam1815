@@ -148,7 +148,7 @@ public class TrainService {
         List<Integer> trainIdsList = new ArrayList<>();
         List<Train> trainList = trainRepository.findAll();
         for(Train train : trainList) {
-            String[] route = train.getRoute().split("'");
+            String[] route = train.getRoute().split(",");
             for(int i=0; i< route.length; i++) {
                 if(Objects.equals(route[i], String.valueOf(station))) {
                     int startTimeInMin = (startTime.getHour() * 60) + startTime.getMinute();
